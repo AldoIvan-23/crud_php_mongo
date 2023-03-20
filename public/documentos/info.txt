@@ -1,0 +1,21 @@
+use crud-aimb;
+
+db.personas.insert({
+    "paterno":"Martinez",
+    "materno":"Balderas",
+    "nombre":"Aldo Ivan",
+    "fecha":"23-07-2001"
+});
+
+db.createUser({
+    user:"mongoadmin",
+    pwd:"2310",
+    roles:[
+        {
+            role: "readWrite",
+            db: "crud-aimb"
+        }
+    ]
+})
+
+    exit mongosh -u mongoadmin -p 2310 --authenticationDatabase crud-aimb
